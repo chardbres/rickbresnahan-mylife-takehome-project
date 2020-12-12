@@ -1,70 +1,14 @@
-# Getting Started with Create React App
+#MyLife Take-Home Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The purpose of this README is to provide an outline and justification of all project design decisions, as well as instructions regarding app usage.
 
-## Available Scripts
 
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+###Design Decisions and General Timeline
+1. Ensure that task is well-understood and formulate general game-plan.
+   - Client requirements are to create a React application that requests data from an endpoint, displays data according to appropriate tags, has clickable toggle buttons to filter data content, and which has minimal appropriate styling.
+    - First assumption is that data is organized in such a way that it can be presented easily in a table.
+    - Second assumption is that a reasonable number of npm imports is acceptable.
+    - **Game Plan:** take an initial look at the data to confirm assumptions. If as expected, go ahead with creating table component to display data, toggle switches to implement filtering functionality, and attempt to populate table via API call to endpoint. Use Bootstrap for simple styling. Once this is successful, work on filtering functionality. Implement a few simple component unit tests with Jest, which is built into CRA.
+    - **Bonus Objectives:** if there is time, make the table sortable.
+2. **Step 1:** used Postman to query data endpoint, which returned a JSON file. Noted that each data object is composed of a "tag" ("character", "location", and "quote") with corresponding "content", and that total file is only ~10kb. Concluded that a table is is the ideal means of data display, and also that the amount of data is small enough to GET and then store in state for filtering, rather than making separate API calls for each filter selection on tags.
+3. **Step 2:** created folder structure and imported known required libraries. Simple file structure should only require a src/ folder for APIs and a folder for the components. Imports so far: react-bootstrap and node-sass (for styling, prefer to use Emotion but there are very few components in this project), axios (for API calls). 
