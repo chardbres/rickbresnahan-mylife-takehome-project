@@ -1,0 +1,22 @@
+.buttonDiv {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  div {
+    margin: 1rem 0;
+  }
+
+  .submitDiv {
+    Button {
+      width: 20rem;
+    }
+  }
+
+
+  .toggleDiv {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+}
