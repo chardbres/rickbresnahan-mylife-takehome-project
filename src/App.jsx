@@ -78,9 +78,7 @@ function App() {
           </span>
         </div>
       </div>
-      <DataTable 
-        data={filteredData}
-      />
+      <DataTable data={filteredData} />
     </div>
   )
 }
